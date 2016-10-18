@@ -11,7 +11,13 @@ cp .vimrc ~/.vimrc
 echo "install vim plugins.."
 cd ~/.vim/
 git init
-git  https://github.com/sickill/vim-monokai.git 
+git clone https://github.com/sickill/vim-monokai.git 
 cp -r vim-monokai/colors ~/.vim/   
 #git submodule add git://github.com/Lokaltog/vim-easymotion.git bundle/easymotion
+
+cd ~/.vim/bundle
+git clone https://github.com/Valloric/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
+./install.sh --clang-completer
 
